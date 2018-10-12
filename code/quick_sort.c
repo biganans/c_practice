@@ -1,4 +1,6 @@
 //快速排序
+//T(n) = O(nlog2(n))
+//S(n) = O(log2(n))
 #include <stdio.h>
 
 void print_list(int* list,int lenght)
