@@ -1,5 +1,5 @@
 //简单排序(直接选择排序) 不稳定排序
-//O(n^2)
+//T(n) = O(n^2) S(n)=O(1)
 #include <stdio.h>
 
 void print_list(int* list,int lenght)
