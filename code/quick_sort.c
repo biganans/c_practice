@@ -1,4 +1,4 @@
-//快速排序
+//快速排序 不稳定排序
 //T(n) = O(nlog2(n))
 //S(n) = O(log2(n))
 #include <stdio.h>
