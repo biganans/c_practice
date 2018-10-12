@@ -3,9 +3,9 @@
 //S(n) = O(log2(n))
 #include <stdio.h>
 
-void print_list(int* list,int lenght)
+void print_list(int* list,int length)
 {
-    for (int i=0;i<lenght;i++)
+    for (int i=0;i<length;i++)
     {
         printf("%d ",list[i]);
     }
@@ -13,7 +13,7 @@ void print_list(int* list,int lenght)
 }
 
 //先确定一个数然后两边找，左边找比数小的index，右边找比数大的index，然后交叉记录直到左右index重合，起到一个分界的作用
-int quick_ome_pass(int* list,int lenght,int low,int high)
+int quick_ome_pass(int* list,int length,int low,int high)
 {
     int temp = list[low];
     int i=low;
@@ -49,40 +49,40 @@ int quick_ome_pass(int* list,int lenght,int low,int high)
     //最后把temp的值放位置
     list[i] = temp;
 
-    print_list(list,lenght);
+    print_list(list,length);
 
     return i;
 
 }
 
 //递归
-void recursive_sort(int* list,int lenght,int low,int high)
+void recursive_sort(int* list,int length,int low,int high)
 {
     int k = 0;
     if (low < high)
     {
-        k = quick_ome_pass(list,lenght,low,high);
+        k = quick_ome_pass(list,length,low,high);
         //分别递归当前分割线的左右两边继续排序
-        recursive_sort(list,lenght,low,k-1);
-        recursive_sort(list,lenght,k+1,high);
+        recursive_sort(list,length,low,k-1);
+        recursive_sort(list,length,k+1,high);
     }
 }
 
 //使用栈来做非递归算法
 #define MAX_STACK 300
-void quick_sort(int* list,int lenght)
+void quick_sort(int* list,int length)
 {
     int stack[MAX_STACK] = {0};
     int top = 0;
     int low = 0;
-    int high = lenght-1;
+    int high = length-1;
     int k = 0;
 
     do
     {
         while (low < high)
         {
-            k = quick_ome_pass(list,lenght,low,high);
+            k = quick_ome_pass(list,length,low,high);
             //记录当次的分界点
             stack[top++] = high;
             stack[top++] = k+1;
@@ -104,9 +104,9 @@ int main(int argc, char const *argv[])
 {
     int list[] = {29,38,22,45,23,67,31};
     int lenght = 7;
-    print_list(list,lenght);
+    print_list(list,length);
 
-    // recursive_sort(list,lenght,0,lenght-1);
-    quick_sort(list,lenght);
+    // recursive_sort(list,length,0,length-1);
+    quick_sort(list,length);
     return 0;
 }
