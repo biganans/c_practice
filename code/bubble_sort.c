@@ -1,5 +1,5 @@
 //冒泡算法
-
+//O(n^2)
 #include <stdio.h>
 
 void print_list(int* list,int lenght)
