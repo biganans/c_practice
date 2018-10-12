@@ -2,9 +2,9 @@
 //O(n^2)
 #include <stdio.h>
 
-void print_list(int* list,int lenght)
+void print_list(int* list,int length)
 {
-    for (int i=0;i<lenght;i++)
+    for (int i=0;i<length;i++)
     {
         printf("%d ",list[i]);
     }
@@ -12,12 +12,12 @@ void print_list(int* list,int lenght)
 }
 
 
-void binary_inset_sort(int* list,int lenght)
+void binary_inset_sort(int* list,int length)
 {
-    print_list(list,lenght);
+    print_list(list,length);
     int i=0,j=0,low=0,high=0,mid=0;
     int temp = 0;
-    for (i=1;i<lenght;i++)
+    for (i=1;i<length;i++)
     {
         //low和hight都是记录i以前的最高最低点，只是方便找到插入的位置
         low = 0;
@@ -41,14 +41,14 @@ void binary_inset_sort(int* list,int lenght)
         }
         list[high+1] = temp;
 
-        print_list(list,lenght);
+        print_list(list,length);
     }
 }
 
 int main(int argc, char const *argv[])
 {
     int a[] = {30,13,70,85,39,42,6,20};
-    int lenght = 8;
-    binary_inset_sort(a,lenght);
+    int length = 8;
+    binary_inset_sort(a,length);
     return 0;
 }
