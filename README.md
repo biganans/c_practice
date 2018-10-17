@@ -15,4 +15,4 @@
 | 基数排序 | O(d(n+r)) | O(d(n+r)) | O(n+r) | 稳定 | 依次对每个进位数进行排序：个位->十位->百位->... 最后得到的序列即为有序数组。其中，d 为位数，r 为基数，n 为原数组个数。 |
 
 ## 字符串匹配    
-BF、KMP、BM、Sunday算法
+BF（Brute Force，暴力检索）O(m*n)、RK（Robin-Karp，哈希检索）O(m*n)、KMP（教科书上最常见算法）O(m+n)、BM（Boyer Moore）O(m*n)~O(n)、SundayO(m*n)~O(n)等
