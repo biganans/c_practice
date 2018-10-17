@@ -1,4 +1,4 @@
-## c_practice
+ ## c_practice
 练习基本的c算法
 
 ## 主要内部排序方法的性能
@@ -23,6 +23,6 @@
 | BM（Boyer Moore） |O(n) | O(m*n) | BM算法的执行效率要比KMP算法快3-5倍左右，并且十分容易理解。各种记事本的“查找”功能（CTRL + F）一般都是采用的此算法。 |
 | horspool |O(n) | O(m*n) | horspool算法将主串中匹配窗口的最后一个字符跟模式串中的最后一个字符比较。如果相等，继续从后向前对主串和模式串进行比较，直到完全相等或者在某个字符处不匹配为止。如果不匹配，则根据主串匹配窗口中的最后一个字符β在模式串中的下一个出现位置将窗口向右移动。Horspool算法相对于Boyer-Moore算法改进了坏字符规则，Boyer-Moore算法只是将模式串P中从当前未匹配位置向右第一个坏字符与母串的坏字符（未匹配的字符）对齐进行再次匹配，Horspool算法是以当前匹配窗口中母串的最末尾的一个字符和模式串最靠近它的字符对齐。 |
 | Sunday |O(n) | O(m*n) | 一种比BM算法还要快，而且更容易理解的算法。 |
-| Aho-Corasick （AC自动机算法） |O(n) | O(n) | Aho-Corasick算法和前面的算法一样都要对模式串进行预处理，预处理主要包括字典树Tire的构造，构建状态转移表（goto），失效函数（failure function），输出表（Output）。Aho-Corasick算法包括以下3个步骤：1.构建字典树Tire；2.构建状态转移表，失效函数（failure function），输出表（Output）；3.搜索路径（进行匹配）。 |
+| Aho-Corasick （AC自动机算法） |O(n) | O(n) | Aho-Corasick算法和前面的算法一样都要对模式串进行预处理，预处理主要包括字典树Tire的构造，构建状态转移表（goto），失效函数（failure function），输出表（Output）。Aho-Corasick算法包括以下3个步骤：1.构建字典树Tire；2.构建状态转移表，失效函数（failure function），输出表（Output）；3.搜索路径（进行匹配）。 敏感词过滤一般可以用这种算法。 |
 
 以上算法需要配合各种图来看才更明白，网上搜索可得。
